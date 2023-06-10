@@ -38,4 +38,17 @@ public class Sorter {
         }
         return array;
     }
+
+    public int[] insertion(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int position = i;
+            int tempValue = array[i];
+            while (position > 0 && array[position - 1] > tempValue) {
+                array[position] = array[position - 1];
+                position -= 1;
+            }
+            array[position] = tempValue;
+        }
+        return array;
+    }
 }
